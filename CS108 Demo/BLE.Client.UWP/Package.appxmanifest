@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" 
+         IgnorableNamespaces="uap mp rescap"> -->
+
+<!-- <Package xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"  xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10"  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4" IgnorableNamespaces="uap mp uap5 rescap iot uap4" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"> -->
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
+
+  <Identity Name="ConvergenceSystemsLimited.CS108CDemo" Publisher="CN=781A704A-3406-4460-BC4A-0B7C6B92AAAB" Version="3.1.14.0" />
+  <mp:PhoneIdentity PhoneProductId="3e70c2f6-c440-4dbe-9fe1-23b41094a1ea" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>IFM RFID Demo</DisplayName>
+    <PublisherDisplayName>Convergence Systems Limited</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BLE.Client.UWP.App">
+      <uap:VisualElements DisplayName="IFM RFID Demo" Description="CS108 C# Demo" BackgroundColor="transparent" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped"/>
+          <uap:Rotation Preference="landscapeFlipped"/>
+        </uap:InitialRotationPreference>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+
+    <rescap:Capability Name="broadFileSystemAccess" />
+
+    <uap:Capability Name="documentsLibrary"/>
+    <uap:Capability Name="picturesLibrary" />
+
+    <!-- <rescap:Capability Name="broadFileSystemAccess" />
+    <uap:Capability Name="musicLibrary"/>
+    <uap:Capability Name="removableStorage"/>
+    <Capability Name="codeGeneration"/>
+    <iot:Capability Name="systemManagement"/>
+    <uap4:Capability Name="userDataTasks"/> -->
+
+    <DeviceCapability Name="bluetooth" />
+    <DeviceCapability Name="location"/>  
+
+  </Capabilities>
+</Package>

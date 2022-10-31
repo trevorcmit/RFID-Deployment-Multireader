@@ -1,0 +1,1 @@
+MainPackage=C:\Users\trevo\source\repos\RFID_BT_app Yoga\CS108 Demo\BLE.Client.UWP\bin\x86\Debug\BLE.Client.UWP_3.1.14.0_x86_Debug.msix

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:BLE.Client.Pages;assembly=BLE.Client"
+    x:Class="BLE.Client.Pages.PageMainMenu"
+    Title="CS108 RFID Reader">
+
+
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" WidthRequest="1000">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+		<RelativeLayout>
+
+            <Button 
+                FontFamily="CalibreLight" Text="Temperature Read" Font="Large" CornerRadius="20"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#d22030"
+                TextColor="White"
+                Command="{Binding OnRFMicroButtonCommand}"
+                CommandParameter="1"
+                BorderColor="White"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15, Constant=2}"
+				RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.14, Constant=2}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.14, Constant=-4}" 
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.70, Constant=-4}"
+            />
+
+            <Button 
+                FontFamily="CalibreLight" Text="Settings" Font="Large" CornerRadius="20"
+        		HorizontalOptions="FillAndExpand"
+                BackgroundColor="#d22030"
+                TextColor="White"
+                Command="{Binding OnSettingButtonCommand}"
+                CommandParameter="1"
+                BorderColor="White"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15, Constant=2}"
+				RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.56, Constant=2}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.14, Constant=-4}" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.70, Constant=-4}"
+            />
+
+            <Button 
+                Text="{Binding connectedButton1}"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#C3C3C3"
+                TextColor="{Binding connectedButtonTextColor1}"
+                Command="{Binding OnConnectButtonCommand1}"
+                CommandParameter="1"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0, Constant=2}"
+                RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.84, Constant=2}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.12, Constant=-4}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.45, Constant=-4}"
+            />
+
+            <Button 
+                Text="{Binding connectedButton2}"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#C3C3C3"
+                TextColor="{Binding connectedButtonTextColor2}"
+                Command="{Binding OnConnectButtonCommand2}"
+                CommandParameter="1"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.55, Constant=2}"
+                RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.84, Constant=2}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.12, Constant=-4}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.45, Constant=-4}"
+            />
+
+            <Label
+				Text ="{Binding labelVoltage}"
+                TextColor="{Binding labelVoltageTextColor}"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0, Constant=2}"
+				RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.96, Constant=2}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.04, Constant=-4}" 
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=1.0, Constant=-4}" 	
+			/>
+
+		</RelativeLayout>
+
+    </Grid>
+
+</pages:BasePage>
