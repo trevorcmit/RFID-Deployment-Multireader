@@ -1,10 +1,5 @@
 ﻿using System;
-// using System.Collections.Generic;
-// using System.Linq;
-// using System.Text;
-// using System.Threading.Tasks;
 using Xamarin.Forms;
-// using Xamarin.Forms.Xaml;
 
 
 namespace BLE.Client.Pages {
@@ -162,6 +157,8 @@ namespace BLE.Client.Pages {
 
             BleMvxApplication.SaveConfig(1);
             BleMvxApplication.SaveConfig(2);
+            BleMvxApplication.SaveConfig(3);
+            BleMvxApplication.SaveConfig(4);
 
             if (BleMvxApplication._config1.RFID_PowerSequencing_NumberofPower == 0)
                 BleMvxApplication._reader1.rfid.SetPowerSequencing(0);
@@ -172,6 +169,16 @@ namespace BLE.Client.Pages {
                 BleMvxApplication._reader2.rfid.SetPowerSequencing(0);
             else
                 BleMvxApplication._reader2.rfid.SetPowerSequencing(BleMvxApplication._config2.RFID_PowerSequencing_NumberofPower, BleMvxApplication._config2.RFID_PowerSequencing_Level, BleMvxApplication._config2.RFID_PowerSequencing_DWell);
+            
+            if (BleMvxApplication._config3.RFID_PowerSequencing_NumberofPower == 0)
+                BleMvxApplication._reader3.rfid.SetPowerSequencing(0);
+            else
+                BleMvxApplication._reader3.rfid.SetPowerSequencing(BleMvxApplication._config3.RFID_PowerSequencing_NumberofPower, BleMvxApplication._config3.RFID_PowerSequencing_Level, BleMvxApplication._config3.RFID_PowerSequencing_DWell);
+            
+            if (BleMvxApplication._config4.RFID_PowerSequencing_NumberofPower == 0)
+                BleMvxApplication._reader4.rfid.SetPowerSequencing(0);
+            else
+                BleMvxApplication._reader4.rfid.SetPowerSequencing(BleMvxApplication._config4.RFID_PowerSequencing_NumberofPower, BleMvxApplication._config4.RFID_PowerSequencing_Level, BleMvxApplication._config4.RFID_PowerSequencing_DWell);
         }
     }
 }

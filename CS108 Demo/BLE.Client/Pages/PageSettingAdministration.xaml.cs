@@ -128,8 +128,20 @@ namespace BLE.Client.Pages {
                 return;
             }
 
+            if (BleMvxApplication._reader3.barcode.state == CSLibrary.BarcodeReader.STATE.NOTVALID) {
+                DisplayAlert(null, "Barcode module not exists", "OK");
+                return;
+            }
+
+            if (BleMvxApplication._reader4.barcode.state == CSLibrary.BarcodeReader.STATE.NOTVALID) {
+                DisplayAlert(null, "Barcode module not exists", "OK");
+                return;
+            }
+
             BleMvxApplication._reader1.barcode.FactoryReset();
             BleMvxApplication._reader2.barcode.FactoryReset();
+            BleMvxApplication._reader3.barcode.FactoryReset();
+            BleMvxApplication._reader4.barcode.FactoryReset();
         }
 
         public async void btnConfigResetClicked(object sender, EventArgs e) {

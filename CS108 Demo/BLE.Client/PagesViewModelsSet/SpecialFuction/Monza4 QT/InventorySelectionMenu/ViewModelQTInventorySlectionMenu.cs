@@ -1,35 +1,13 @@
-﻿/*
-Copyright (c) 2018 Convergence Systems Limited
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using Acr.UserDialogs;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
-
 using System.Windows.Input;
 using Xamarin.Forms;
-
 using Plugin.BLE.Abstractions.Contracts;
+
 
 namespace BLE.Client.ViewModels {
     public class ViewModelQTInventorySlectionMenu : BaseViewModel {
@@ -38,19 +16,18 @@ namespace BLE.Client.ViewModels {
         public ICommand OnPublicModeInventoryButtonCommand { protected set; get; }
         public ICommand OnPrivateModeInventoryButtonCommand { protected set; get; }
 
-
         public ViewModelQTInventorySlectionMenu(IAdapter adapter, IUserDialogs userDialogs) : base(adapter) {
             _userDialogs = userDialogs;
-
             OnPublicModeInventoryButtonCommand = new Command(OnPublicModeInventoryButtonClicked);
             OnPrivateModeInventoryButtonCommand = new Command(OnPrivateModeInventoryButtonClicked);
         }
 
         public override void Resume() {
             base.Resume();
-
             BleMvxApplication._reader1.rfid.CancelAllSelectCriteria();
             BleMvxApplication._reader2.rfid.CancelAllSelectCriteria();
+            BleMvxApplication._reader3.rfid.CancelAllSelectCriteria();
+            BleMvxApplication._reader4.rfid.CancelAllSelectCriteria();
         }
 
         void OnPublicModeInventoryButtonClicked() {
@@ -60,5 +37,6 @@ namespace BLE.Client.ViewModels {
         void OnPrivateModeInventoryButtonClicked() {
             ShowViewModel<ViewModelQTPrivateModeInventory>(new MvxBundle());
         }
+
     }
 }

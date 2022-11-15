@@ -21,6 +21,8 @@ namespace BLE.Client.Pages {
             // the page only support 4 ports
             if (BleMvxApplication._reader1.rfid.GetAntennaPort() != 4) return;
             if (BleMvxApplication._reader2.rfid.GetAntennaPort() != 4) return;
+            if (BleMvxApplication._reader3.rfid.GetAntennaPort() != 4) return;
+            if (BleMvxApplication._reader4.rfid.GetAntennaPort() != 4) return;
             if (Device.RuntimePlatform == Device.iOS) {
                 this.Icon = new FileImageSource();
                 this.Icon.File = "icons8-Settings-50-3-30x30.png";

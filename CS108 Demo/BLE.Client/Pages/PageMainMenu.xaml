@@ -16,65 +16,228 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <Image Source="Assets/digitalbackground.jpg" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" Opacity="0.93"/>
+
 		<RelativeLayout>
 
-            <Button 
-                FontFamily="CalibreLight" Text="Temperature Read" Font="Large" CornerRadius="20"
-                HorizontalOptions="FillAndExpand"
-                BackgroundColor="#d22030"
-                TextColor="White"
-                Command="{Binding OnRFMicroButtonCommand}"
-                CommandParameter="1"
-                BorderColor="White"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15, Constant=2}"
-				RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.14, Constant=2}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.14, Constant=-4}" 
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.70, Constant=-4}"
-            />
+            <Image Source="Assets/white_play.png">
+                <RelativeLayout.XConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.XConstraint>
+                <RelativeLayout.WidthConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.24, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.90, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.WidthConstraint>
+                <RelativeLayout.YConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.25, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.02, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.YConstraint>
+                <RelativeLayout.HeightConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.40, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.26, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.HeightConstraint>
+            </Image>
+            <Image Source="Assets/white_clipboard.png">
+                <RelativeLayout.XConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.38, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.XConstraint>
+                <RelativeLayout.WidthConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.24, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.90, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.WidthConstraint>
+                <RelativeLayout.YConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.25, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.30, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.YConstraint>
+                <RelativeLayout.HeightConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.40, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.26, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.HeightConstraint> 
+            </Image>
+            <Image Source="Assets/white_gear.png">
+                <RelativeLayout.XConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.71, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.XConstraint>
+                <RelativeLayout.WidthConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.24, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.90, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.WidthConstraint>
+                <RelativeLayout.YConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.25, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.58, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.YConstraint>
+                <RelativeLayout.HeightConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.40, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.26, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.HeightConstraint>
+            </Image>
+
+            <Button
+                FontFamily="CalibreLight" CornerRadius="20" HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent" BorderColor="Transparent"
+                Command="{Binding OnRFMicroButtonCommand}" CommandParameter="1"
+            >
+                <RelativeLayout.XConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.XConstraint>
+                <RelativeLayout.WidthConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.24, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.41, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.WidthConstraint>
+                <RelativeLayout.YConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.07, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.YConstraint>
+                <RelativeLayout.HeightConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.65, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.41, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.HeightConstraint>
+            </Button>
+            <Button
+                FontFamily="CalibreLight" CornerRadius="20" HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent" BorderColor="Transparent"
+                Command="{Binding OnRenameButtonCommand}" CommandParameter="1"
+            >
+                <RelativeLayout.XConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.38, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.54, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.XConstraint>
+                <RelativeLayout.WidthConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.24, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.41, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.WidthConstraint>
+                <RelativeLayout.YConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.07, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.YConstraint>
+                <RelativeLayout.HeightConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.65, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.41, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.HeightConstraint>
+            </Button>
+            <Button
+                FontFamily="CalibreLight" CornerRadius="20" HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent" BorderColor="Transparent"
+                Command="{Binding OnSettingButtonCommand}" CommandParameter="1"
+            >
+                <RelativeLayout.XConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.71, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.05, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.XConstraint>
+                <RelativeLayout.WidthConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.24, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.41, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.WidthConstraint>
+                <RelativeLayout.YConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.07, Constant=2}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.54, Constant=2}"/>
+                    </OnPlatform>
+                </RelativeLayout.YConstraint>
+                <RelativeLayout.HeightConstraint>
+                    <OnPlatform x:TypeArguments="Constraint">
+                        <On Platform="UWP"     Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.65, Constant=-4}"/>
+                        <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.41, Constant=-4}"/>
+                    </OnPlatform>
+                </RelativeLayout.HeightConstraint>
+            </Button>
+
 
             <Button 
-                FontFamily="CalibreLight" Text="Settings" Font="Large" CornerRadius="20"
-        		HorizontalOptions="FillAndExpand"
-                BackgroundColor="#d22030"
-                TextColor="White"
-                Command="{Binding OnSettingButtonCommand}"
-                CommandParameter="1"
-                BorderColor="White"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15, Constant=2}"
-				RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.56, Constant=2}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.14, Constant=-4}" 
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.70, Constant=-4}"
-            />
-
-            <Button 
-                Text="{Binding connectedButton1}"
+                Text="{Binding connectedButton1}" TextColor="#FFFFFF"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="#C3C3C3"
-                TextColor="{Binding connectedButtonTextColor1}"
-                Command="{Binding OnConnectButtonCommand1}"
-                CommandParameter="1"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0, Constant=2}"
+                BackgroundColor="{Binding connectedButtonTextColor1}" CornerRadius="10"
+                Command="{Binding OnConnectButtonCommand1}" CommandParameter="1"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.08, Constant=2}"
                 RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.84, Constant=2}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.12, Constant=-4}"
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.45, Constant=-4}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.15, Constant=-4}"
             />
 
             <Button 
-                Text="{Binding connectedButton2}"
+                Text="{Binding connectedButton2}" TextColor="#FFFFFF"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="#C3C3C3"
-                TextColor="{Binding connectedButtonTextColor2}"
-                Command="{Binding OnConnectButtonCommand2}"
-                CommandParameter="1"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.55, Constant=2}"
+                BackgroundColor="{Binding connectedButtonTextColor2}" CornerRadius="10"
+                Command="{Binding OnConnectButtonCommand2}" CommandParameter="1"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.31, Constant=2}"
                 RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.84, Constant=2}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.12, Constant=-4}"
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.45, Constant=-4}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.15, Constant=-4}"
+            />
+
+            <Button 
+                Text="{Binding connectedButton3}" TextColor="#FFFFFF"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="{Binding connectedButtonTextColor3}" CornerRadius="10"
+                Command="{Binding OnConnectButtonCommand1}" CommandParameter="1"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.54, Constant=2}"
+                RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.84, Constant=2}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.12, Constant=-4}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.15, Constant=-4}"
+            />
+
+            <Button 
+                Text="{Binding connectedButton4}" TextColor="#FFFFFF"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="{Binding connectedButtonTextColor4}" CornerRadius="10"
+                Command="{Binding OnConnectButtonCommand2}" CommandParameter="1"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.77, Constant=2}"
+                RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.84, Constant=2}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.12, Constant=-4}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type = RelativeToParent, Property=Width, Factor=0.15, Constant=-4}"
             />
 
             <Label
 				Text ="{Binding labelVoltage}"
-                TextColor="{Binding labelVoltageTextColor}"
+                TextColor="#FFFFFF"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0, Constant=2}"
 				RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.96, Constant=2}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type = RelativeToParent, Property=Height, Factor=0.04, Constant=-4}" 

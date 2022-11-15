@@ -181,9 +181,13 @@ namespace BLE.Client {
     public class BleMvxApplication : MvxApplication {
         static public HighLevelInterface _reader1 = new HighLevelInterface();
         static public HighLevelInterface _reader2 = new HighLevelInterface();
+        static public HighLevelInterface _reader3 = new HighLevelInterface();
+        static public HighLevelInterface _reader4 = new HighLevelInterface();
 
         public static CONFIG _config1;
         public static CONFIG _config2;
+        public static CONFIG _config3;
+        public static CONFIG _config4;
 
         // for Geiger and Read/Write
         public static string _SELECT_EPC = "";
